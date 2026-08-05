@@ -13,22 +13,25 @@ const listOfTaskModel = {
     },
 
     // Create a new task 
-    postTask: (name, tasks = []) => {
+    postTask: (name, tasks) => {
         const list = {
             id: Date.now().toString(),
             name: name,
             tasks: tasks,
             status: enumStatus.pending,
             createdAt: new Date(),
-            updatedAT: new Date()
+            updatedAt: new Date()
         }
-        listOfTasks.push(list)
+        return list
     },
 
+    // Save task list
+    save: (list) => {
+        listOfTasks.push(list)
+    },
     // get a list by id
     getListById: (id) => {
-        const list = listOfTasks.find(list => list.id === id)
-        return list
+        return listOfTasks.find(list => list.id == id)
     },
 
     // update a list by id
@@ -40,6 +43,9 @@ const listOfTaskModel = {
 
     // Delete a list by id 
     deleteList: (id) => {
-        const listOfTasks = listOfTasks.find(task => task.id !== id)
+        listOfTasks = listOfTasks.filter(task => task.id !== id)
     }
 }
+
+
+module.exports = listOfTaskModel
