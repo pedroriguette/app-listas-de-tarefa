@@ -1,0 +1,27 @@
+header {
+    width: 100%;
+    padding: 12px 4%;
+    background-color: aliceblue;
+    #navbar {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            gap: 25px;
+            list-style: none;
+
+            li {
+                a {
+                    text-decoration: none;
+                    color: black;
+                }
+            }
+
+        }
+    }
+
+}

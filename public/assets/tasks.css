@@ -1,0 +1,47 @@
+#table-card {
+    width: 100%;
+    padding: 12px 20%;
+    
+
+    .table {
+        border-collapse: collapse;
+        width: 100%;
+        padding: 10px;
+
+        td,
+        th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        th {
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        td {
+            padding: 8px;
+        }
+
+        tr:nth-child(even){background-color: #585656;}
+        tr:hover {background-color: #858383;}
+
+        .th-actions {
+            width: clamp(80px, 100px, 120px);
+        }
+
+        .td-actions {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .btn {
+            margin: 6px;
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+        }
+    }
+}

@@ -1,0 +1,104 @@
+#add-task-card {
+    width: 100%;
+
+
+    .post-form {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 0;
+        gap: 18px;
+        padding: 20px 10%;
+        justify-content: space-between;
+
+        .card-task {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 70%;
+
+            input {
+                padding: 8px;
+                border: none;
+                border-radius: 3px;
+                width: 100%;
+            }
+        }
+
+        .btn-group {
+            display: flex;
+            align-items: end;
+        }
+
+    }
+}
+
+#task {
+    width: 100%;
+    padding: 20px 10%;
+
+    h2 {
+        padding-bottom: 12px;
+        text-transform: uppercase;
+    }
+
+    #table {
+
+        border-collapse: collapse;
+        width: 100%;
+        padding: 10px;
+
+        td,
+        th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        th {
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        td {
+            padding: 8px;
+        }
+
+        .task-completed {
+            background-color: #0f885b;
+        }
+
+        tr:hover {
+            background-color: #858383;
+        }
+
+        .th-actions {
+            width: clamp(80px, 100px, 120px);
+        }
+
+        .td-actions {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .btn {
+            margin: 6px;
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        form {
+            text-align: center;
+
+            input[type="checkbox"] {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    .btn-group {
+        margin-top: 15px;
+    }
+}
