@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/assets/index.css">
+</head>
+
+<body>
+    <%- include('partials/header')  %>
+    <% if (tasks.length > 0) { %>
+    <div id="container">
+        
+        <div id="table-card">
+            <table class="table">
+                <thead id="thead">
+                    <tr>
+                        <th>Lista</th>
+                        <th class="th-actions">Ações</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody">
+                    <% tasks.forEach(task=> { %>
+                        <tr>
+                            <td>
+                                <%= task.name %>
+                            </td>
+                            <td class="td-actions">
+                                <form action="/task/delete/<%= task.id %>" method="post">
+                                    <button type="submit" class="btn btn-delete">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </form>
+                                <button class="btn btn-view">
+                                    <a href="/task/<%= task.id %>">
+                                        <i class="bi bi-eye"></i>
+                                    </a>
+                                </button>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <% } else { %>
+    <div class="card-no-content">
+        <h2>Você não tem Lista de Tarefas Cadastrada</h2>
+        <button class="btn-no-content">
+            <a href="/task/create">Cadastrar</a>
+        </button>
+    </div>
+    <% } %>
+</body>
+
+</html>

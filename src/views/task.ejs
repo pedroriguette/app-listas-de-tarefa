@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task | <%= task.name %>
+    </title>
+    <link rel="stylesheet" href="/assets/index.css">
+</head>
+
+<body>
+    <%- include('partials/header') %>
+        <div id="container">
+            <div id="add-task-card">
+                <form action="/task/update/<%= task.id %>" method="post" class="post-form">
+                    <div class="card-task">
+                        <label for="tasks-input">Atividade:</label>
+                        <input id="tasks-input" type="text" name="tasks">
+                    </div>
+                    <div class="btn-group">
+                        <button type="submit" class="btn-create">Criar Atividade</button>
+                    </div>
+
+                </form>
+            </div>
+
+
+            <div id="task">
+                <h2>
+                    <%= task.name %>
+                </h2>
+                <table id="table">
+                    <thead>
+                        <tr>
+                            <th>Atividade</th>
+                            <th class="th-actions">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-task">
+
+                        <% task.tasks.forEach((t)=> { %>
+                            <tr class=<%= t.check === true ? 'task-completed' : ''%>>
+                                <td >
+                                    <%= t.task %>
+                                </td>
+                                <td>
+                                    <form action="/task/update/<%= task.id %>/task/<%= t.id_task %>" method="post">
+                                        <label class="task-checkbox"></label>
+                                        <input
+                                         type="checkbox"
+                                         name="check" 
+                                         value="true"
+                                         <%= t.check === true ? 'checked' : ''%>
+                                         onclick="this.form.submit()"> 
+                                        
+                                    </form>
+                                </td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+                <div class="btn-group">
+                    <a href="/tasks" class="btn-back">Voltar</a>
+                </div>
+            </div>
+        </div>
+        <script></script>
+</body>
+
+</html>
