@@ -1,11 +1,5 @@
 let listOfTasks = []
 
-const enumStatus = {
-    'pending': 'pending',
-    'in progress': 'in progress',
-    'completed': 'completed'
-}
-
 const listOfTaskModel = {
     // List all List tasks
     getAllTasks: () => {
@@ -13,12 +7,11 @@ const listOfTaskModel = {
     },
 
     // Create a new task 
-    postTask: (name, tasks) => {
+    postListTask: (name, tasks) => {
         const list = {
             id: Date.now().toString(),
             name: name,
             tasks: tasks,
-            status: enumStatus.pending,
             createdAt: new Date(),
             updatedAt: new Date()
         }
@@ -29,6 +22,7 @@ const listOfTaskModel = {
     save: (list) => {
         listOfTasks.push(list)
     },
+
     // get a list by id
     getListById: (id) => {
         return listOfTasks.find(list => list.id == id)
