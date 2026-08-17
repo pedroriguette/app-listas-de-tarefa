@@ -1,4 +1,6 @@
-​Crie uma aplicação Node.js usando Express e EJS para gerenciamento de coleções de listas de tarefas. A aplicação deverá ter as seguintes funcionalidades:
+## Projeto Desenvolvido durante Curso​
+
+Crie uma aplicação Node.js usando Express e EJS para gerenciamento de coleções de listas de tarefas. A aplicação deverá ter as seguintes funcionalidades:
 
 Uma página inicial de apresentação
 Uma página exibindo todas as listas de tarefas
